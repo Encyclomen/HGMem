@@ -1,0 +1,17 @@
+TEXT_CHUNKING:
+    chunk_token_size: 200
+    chunk_overlap_token_size: 50
+ENTITY_EXTRACTION:
+    DEFAULT_LANGUAGE: "English"
+    DEFAULT_TUPLE_DELIMITER: "<|>"
+    DEFAULT_RECORD_DELIMITER: "##"
+    DEFAULT_OBJECT_DELIMITER: "<&>"
+    DEFAULT_COMPLETION_DELIMITER: "<|COMPLETE|>"
+    DEFAULT_ENTITY_TYPES: ["organization", "person", "geo", "event", "role", "concept"]
+    process_tickers: ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
+    max_extra_entity_gleaning: 0
+    entity_summary_max_tokens: 2000
+QUERY:
+    DEFAULT_LANGUAGE: "English"
+
+
