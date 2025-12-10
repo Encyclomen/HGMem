@@ -493,11 +493,11 @@ class HypergraphStorage(BaseHypergraphStorage):
     async def hyperedge_degree(self, e_tuple: Union[List, Set, Tuple]) -> int:
         return self._hypergraph.degree_e(e_tuple)
 
-    async def get_nbr_e_of_vertex(self, e_tuple: Union[List, Set, Tuple]) -> list:
+    async def get_nbr_e_of_vertex(self, v_id: Any) -> list:
         """
             Return the incident hyperedges of the vertex.
         """
-        return self._hypergraph.nbr_e_of_v(e_tuple)
+        return self._hypergraph.nbr_e_of_v(v_id)
 
     async def get_nbr_v_of_hyperedge(self, v_id: Any, exclude_self=True) -> list:
         """
