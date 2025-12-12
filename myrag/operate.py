@@ -708,11 +708,12 @@ async def _find_related_edges_from_entities(
 
     if query is not None and relationships_vdb is not None:
         relationships_vdb_ids_dict = convert_to_relationships_vdb_ids_dict(all_edges)
-        filter_lambda = lambda data: data["__id__"] in relationships_vdb_ids_dict
-        #index_datas = await relationships_vdb.get(edge_ids)
-        filtered_edges = await relationships_vdb.query(query, top_k=query_param.top_k_relationships, filter_lambda=filter_lambda)
+        if relationships_vdb_ids_dict:
+            filter_lambda = lambda data: data["__id__"] in relationships_vdb_ids_dict
+            filtered_edges = await relationships_vdb.query(query, top_k=query_param.top_k_relationships, filter_lambda=filter_lambda)
+        else:
+            filtered_edges = []
         all_edges = [(edge["src_id"], edge["tgt_id"]) for edge in filtered_edges]
-        a=1
 
     all_edges_pack = await asyncio.gather(
         *[knowledge_graph_inst.get_edge(e[0], e[1]) for e in all_edges]
