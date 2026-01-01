@@ -1,8 +1,8 @@
 <h1 align="center">Improving Multi-step RAG with Hypergraph-based Memory For Long-context Complex Relational Modeling</h1>
 
 
-[<img align="center" src="https://img.shields.io/badge/arXiv-xxxxxxxxx-b31b1b" />](https://arxiv.org/abs/xxxxxx)
-[<img align="center" src="https://img.shields.io/badge/GitHub-xxxxxxxxx-blue" />](https://github.com/xxxxxxx)
+[<img align="center" src="https://img.shields.io/badge/arXiv-2512.23959-b31b1b" />](https://arxiv.org/abs/2512.23959)
+[<img align="center" src="https://img.shields.io/badge/GitHub-HGMem-blue" />](https://github.com/Encyclomen/HGMem)
 
 ### HGMem is a powerful working memory framework for LLMs that enhances their ability to perform sense-making questions by leveraging hypergraph-based memory structures to form high-order correlations.
 
@@ -13,14 +13,14 @@ Additionally, HGMem utlizes working memory that dynamically constructs hypergrap
 
 
 <p align="center">
-  <img align="center" src="xxx/intro.png" />
+  <img align="center" src="images/intro.png" />
 </p>
 <p align="center">
   <b>Figure 1:</b> The memory point and evolving example of HGMem
 </p>
 
 <p align="center">
-  <img align="center" src="xxx/method.png" />
+  <img align="center" src="images/method.png" />
 </p>
 <p align="center">
   <b>Figure 2:</b> HGMem methodology.
@@ -28,8 +28,7 @@ Additionally, HGMem utlizes working memory that dynamically constructs hypergrap
 
 #### Check out our papers to learn more:
 
-* [**xxxxxxxx**](https://arxiv.org/abs/xxxxxx).
-
+* [Improving Multi-step RAG with Hypergraph-based Memory for Long-Context Complex Relational Modeling](http://arxiv.org/abs/2512.23959)
 ----
 
 ## Installation
@@ -117,8 +116,11 @@ The corpus and optional query files should have the following format:
 ## Contact
 
 Questions or issues? File an issue or contact 
-[xx](mailto:jimenezgutierrez.1@osu.edu),
-[xxx](mailto:shu.251@osu.edu),
+[Chulun Zhou](mailto:clzhou@se.cuhk.edu.hk),
+[Chunkang Zhang](mailto:zkang5051@gmail.com),
+[Mo Yu](mailto:moyumyu@global.tencent.com),
+
+
 
 
 ## Citation
@@ -127,7 +129,14 @@ If you find this work useful, please consider citing our papers:
 
 ### HGMem 
 ```
-@misc{
+@misc{zhou2025improvingmultistepraghypergraphbased,
+      title={Improving Multi-step RAG with Hypergraph-based Memory for Long-Context Complex Relational Modeling}, 
+      author={Chulun Zhou and Chunkang Zhang and Guoxin Yu and Fandong Meng and Jie Zhou and Wai Lam and Mo Yu},
+      year={2025},
+      eprint={2512.23959},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2512.23959}, 
 }
 ```
 
