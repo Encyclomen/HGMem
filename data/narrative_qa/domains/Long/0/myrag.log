@@ -1,0 +1,53 @@
+2026-01-22 12:42:03,968 - myrag - INFO - Logger initialized for working directory: /nfsdata/maoyingzhi2024/real_rag/HGMem/data/narrative_qa/domains/Long/0
+2026-01-22 12:42:03,972 - myrag - INFO - Load KV llm_response_cache with 0 data
+2026-01-22 12:42:03,975 - myrag - INFO - Load KV full_docs with 1 data
+2026-01-22 12:42:03,980 - myrag - INFO - Load KV text_chunks with 754 data
+2026-01-22 12:42:04,162 - myrag - INFO - Loaded graph from /nfsdata/maoyingzhi2024/real_rag/HGMem/data/narrative_qa/domains/Long/0/graph_chunk_entity_relation.graphml with 1279 nodes, 1791 edges
+2026-01-22 12:42:59,629 - myrag - INFO - Logger initialized for working directory: /nfsdata/maoyingzhi2024/real_rag/HGMem/data/narrative_qa/domains/Long/0
+2026-01-22 12:42:59,631 - myrag - INFO - Load KV llm_response_cache with 0 data
+2026-01-22 12:42:59,633 - myrag - INFO - Load KV full_docs with 1 data
+2026-01-22 12:42:59,637 - myrag - INFO - Load KV text_chunks with 754 data
+2026-01-22 12:42:59,805 - myrag - INFO - Loaded graph from /nfsdata/maoyingzhi2024/real_rag/HGMem/data/narrative_qa/domains/Long/0/graph_chunk_entity_relation.graphml with 1279 nodes, 1791 edges
+2026-01-22 12:44:45,308 - myrag - INFO - Logger initialized for working directory: /nfsdata/maoyingzhi2024/real_rag/HGMem/data/narrative_qa/domains/Long/0
+2026-01-22 12:44:45,310 - myrag - INFO - Load KV llm_response_cache with 0 data
+2026-01-22 12:44:45,313 - myrag - INFO - Load KV full_docs with 1 data
+2026-01-22 12:44:45,317 - myrag - INFO - Load KV text_chunks with 754 data
+2026-01-22 12:44:45,518 - myrag - INFO - Loaded graph from /nfsdata/maoyingzhi2024/real_rag/HGMem/data/narrative_qa/domains/Long/0/graph_chunk_entity_relation.graphml with 1279 nodes, 1791 edges
+2026-01-22 12:46:12,256 - myrag - INFO - Query 0 uses 5 entities, 5 relations.
+2026-01-22 12:46:12,274 - myrag - INFO - Nodes are associated with 5 text chunks
+2026-01-22 12:46:14,416 - myrag - INFO - Query 0 uses 5 entities, 5 relations.
+2026-01-22 12:46:14,438 - myrag - INFO - Nodes are associated with 5 text chunks
+2026-01-22 12:46:15,400 - myrag - INFO - Query 0 uses 5 entities, 5 relations.
+2026-01-22 12:46:15,420 - myrag - INFO - Nodes are associated with 5 text chunks
+2026-01-22 12:46:22,624 - myrag - INFO - Query 0 uses 5 entities, 5 relations.
+2026-01-22 12:46:22,644 - myrag - INFO - Nodes are associated with 5 text chunks
+2026-01-22 12:47:38,225 - myrag - INFO - Logger initialized for working directory: /nfsdata/maoyingzhi2024/real_rag/HGMem/data/narrative_qa/domains/Long/0
+2026-01-22 12:47:38,228 - myrag - INFO - Load KV llm_response_cache with 0 data
+2026-01-22 12:47:38,229 - myrag - INFO - Load KV full_docs with 1 data
+2026-01-22 12:47:38,233 - myrag - INFO - Load KV text_chunks with 754 data
+2026-01-22 12:47:38,398 - myrag - INFO - Loaded graph from /nfsdata/maoyingzhi2024/real_rag/HGMem/data/narrative_qa/domains/Long/0/graph_chunk_entity_relation.graphml with 1279 nodes, 1791 edges
+2026-01-22 12:47:38,934 - myrag - INFO - Query 0 uses 5 entities, 5 relations.
+2026-01-22 12:47:38,951 - myrag - INFO - Nodes are associated with 5 text chunks
+2026-01-22 12:47:40,353 - myrag - INFO - Query 0 uses 5 entities, 5 relations.
+2026-01-22 12:47:40,373 - myrag - INFO - Nodes are associated with 5 text chunks
+2026-01-22 12:47:41,438 - myrag - INFO - Query 0 uses 5 entities, 5 relations.
+2026-01-22 12:47:41,458 - myrag - INFO - Nodes are associated with 5 text chunks
+2026-01-22 12:47:42,602 - myrag - INFO - Query 0 uses 5 entities, 5 relations.
+2026-01-22 12:47:42,623 - myrag - INFO - Nodes are associated with 5 text chunks
+2026-01-22 12:47:43,675 - myrag - INFO - Query 0 uses 5 entities, 5 relations.
+2026-01-22 12:47:43,695 - myrag - INFO - Nodes are associated with 5 text chunks
+2026-01-22 12:48:29,304 - myrag - INFO - Logger initialized for working directory: /nfsdata/maoyingzhi2024/real_rag/HGMem/data/narrative_qa/domains/Long/0
+2026-01-22 12:48:29,306 - myrag - INFO - Load KV llm_response_cache with 0 data
+2026-01-22 12:48:29,308 - myrag - INFO - Load KV full_docs with 1 data
+2026-01-22 12:48:29,312 - myrag - INFO - Load KV text_chunks with 754 data
+2026-01-22 12:48:29,473 - myrag - INFO - Loaded graph from /nfsdata/maoyingzhi2024/real_rag/HGMem/data/narrative_qa/domains/Long/0/graph_chunk_entity_relation.graphml with 1279 nodes, 1791 edges
+2026-01-22 12:48:29,994 - myrag - INFO - Query 0 uses 5 entities, 5 relations.
+2026-01-22 12:48:30,006 - myrag - INFO - Nodes are associated with 5 text chunks
+2026-01-22 12:48:44,776 - myrag - INFO - Inserting 1 vectors to entities
+2026-01-22 12:48:44,812 - myrag - INFO - Inserting 2 vectors to relationships
+2026-01-22 12:48:49,253 - myrag - INFO - Query 0 uses 5 entities, 5 relations.
+2026-01-22 12:48:49,264 - myrag - INFO - Nodes are associated with 5 text chunks
+2026-01-22 12:48:49,298 - myrag - INFO - Query 1 uses 5 entities, 5 relations.
+2026-01-22 12:48:49,309 - myrag - INFO - Nodes are associated with 5 text chunks
+2026-01-22 12:48:49,343 - myrag - INFO - Query 2 uses 5 entities, 5 relations.
+2026-01-22 12:48:49,354 - myrag - INFO - Nodes are associated with 5 text chunks

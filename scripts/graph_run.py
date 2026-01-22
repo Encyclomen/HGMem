@@ -8,7 +8,7 @@ import sys
 sys_dir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(sys_dir)
 from myrag import MyRAG, QueryParam
-from myrag.llm import gpt_4o_mini_complete, hf_model_complete, hf_embedding, ollama_model_complete, vllm_complete
+from myrag.llm import gpt_4o_mini_complete, hf_model_complete, hf_embedding, ollama_model_complete, vllm_complete, openai_complete
 from myrag.utils import EmbeddingFunc, encode_string_by_tiktoken
 
 
@@ -18,15 +18,9 @@ from transformers import AutoModel, AutoTokenizer
 PROJ_DIR = sys_dir
 DATA_DIR = os.path.join(PROJ_DIR, "data")
 
-
 os.environ['HF_HOME'] = os.path.join(PROJ_DIR, "cache/")
 os.environ['TRANSFORMERS_CACHE'] = os.path.join(PROJ_DIR, "cache/")
 os.environ['TIKTOKEN_CACHE_DIR'] = os.path.join(PROJ_DIR, ".tiktoken/")
-#########
-# Uncomment the below two lines if running in a jupyter notebook to handle the async nature of rag.insert()
-# import nest_asyncio
-# nest_asyncio.apply()
-#########
 
 embed_model_name_or_path = os.path.join(PROJ_DIR, 'cache/bge-m3')
 tokenizer = AutoTokenizer.from_pretrained(embed_model_name_or_path)
@@ -35,8 +29,6 @@ if torch.cuda.is_available():
     embed_model.cuda()
 
 default_entity_types_of_interest = ["organization", "person", "geo", "event", "role", "concept"]
-
-
 
 parser = argparse.ArgumentParser(prog='graphrag_run.py', description='')
 #parser.add_argument('domains')
@@ -82,9 +74,9 @@ for domain in domains:
                     embed_model=embed_model
                 )
             ),
-            llm_model_func=vllm_complete,
-            llm_model_name=os.path.join(sys_dir, f"cache/{LLM_MODEL_NAME}"),
-            llm_model_kwargs={"max_tokens": 512, "temperature": 0.8, "top_p": 0.8, "extra_body": {"repetition_penalty": 1.05}},
+            llm_model_func=openai_complete,
+            llm_model_name=LLM_MODEL_NAME,
+            llm_model_kwargs={"max_tokens": 512, "temperature": 0.8, "top_p": 0.8},
             #llm_model_func=gpt_4o_complete,
             addon_params={"language": "English",
                           "entity_types": default_entity_types_of_interest,

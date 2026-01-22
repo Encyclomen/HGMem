@@ -71,16 +71,6 @@ async def build_new_chunk_vdb_for_graph(text_chunk_storage, chunk_vdb):
 
 
 async def main(graph, work_dir):
-    """
-    has_node(self, node_id: str) -> bool
-    get_node(self, node_id: str) -> Union[dict, None]
-    has_edge(source_node_id: str, target_node_id: str) -> bool
-    get_edge(source_node_id: str, target_node_id: str) -> Union[dict, None]
-    node_degree(node_id: str) -> int
-    edge_degree(src_id: str, tgt_id: str) -> int
-    get_node_edges(source_node_id: str)
-    get_neighbor_nodes(node_id) -> List(str)
-    """
 
     if not os.path.exists(f"{work_dir}/vdb_entities.json"):
         entity_vdb = load_entity_vdb(storage_class["NanoVectorDBStorage"], entity_vdb_dir=work_dir, tokenizer=tokenizer, embed_model=embed_model)
@@ -102,12 +92,9 @@ if __name__ == "__main__":
         embed_model.cuda()
     embed_hidden_size = embed_model.config.hidden_size
 
-    DATASET_NAME = "ultradomain"
-    #domains = ["agriculture", "art", "fin", "legal", "mathematics", "neurology", "pathology", "physics", "mix"]
-    domains = ["agriculture"]
-    #DATASET_NAME = "longbench_v2_qa"
-    #domains = ["Academic", "Detective", "Event ordering", "Financial", "Governmental", "Legal", "Literary", "Multi-news"]
-    #domains = ["Legal"]
+
+    DATASET_NAME = "longbench_v2_qa"
+    domains = ["Legal"]
     for domain in domains:
         DOMAIN_DIR = os.path.join(PROJ_DIR, f"data/{DATASET_NAME}/domains/{domain}")
         valid_subdirs = [subdir for subdir in os.listdir(DOMAIN_DIR) if subdir.isdigit()]

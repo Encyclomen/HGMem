@@ -643,7 +643,7 @@ class MyRAG:
 
     async def aquery(self, query: str, query_param: QueryParam = QueryParam()):
         print(query_param)
-        if query_param.mode == "hgmem":
+        if query_param.mode == "HGMem":
             num_try = 0
             while num_try < 5:
                 try:
