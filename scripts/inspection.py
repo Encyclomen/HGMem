@@ -24,26 +24,18 @@ def inspect_raised_questions(raised_questions_path, filtered_raised_questions_pa
             question = item["question"]
             answer = item["reference_answer"]
             involved_entities = item["involved_entities"]
-            #involved_relationships = item["involved_relationships"]
+
             involved_chunks = item["origin_chunks"]
 
             if len(involved_entities) not in statistics_1:
                 statistics_1[len(involved_entities)] = 1
             else:
                 statistics_1[len(involved_entities)] += 1
-            #if len(involved_relationships) not in statistics_2:
-            #    statistics_2[len(involved_relationships)] = 1
-            #else:
-            #    statistics_2[len(involved_relationships)] += 1
+
             if len(involved_chunks) not in statistics_3:
                 statistics_3[len(involved_chunks)] = 1
             else:
                 statistics_3[len(involved_chunks)] += 1
-
-            #new_item["origin_chunks"] = item["origin_chunks"][0]
-            #wjf.write(json.dumps(new_item, ensure_ascii=False) + "\n")
-            #if len(involved_entities) >= 3 and len(involved_relationships) >= 2:
-            #    wjf.write(json.dumps(item, ensure_ascii=False) + "\n")
 
     print(statistics_1)
     print(statistics_2)
@@ -108,8 +100,6 @@ async def inspect_entity_distribution_across_chunks(graph, text_chunk_storage):
             entities_within_interval.extend(history[chunk_id])
         unique_entities_within_interval = set(entities_within_interval)
         statistics.append(len(unique_entities_within_interval))
-        #combined_paragraph = combine_consecutive_overlapping_chunks(all_chunks[i:i+step_size])
-        #print(combined_paragraph)
 
     return history, statistics
 
@@ -133,15 +123,10 @@ def inspect_entity_distribution_across_questions(created_data_dir):
 
 
 if __name__ == "__main__":
-    #model_name_or_path = os.path.join(PROJ_DIR, 'cache/Qwen2-1.5B-Instruct')
-    #model_name_or_path = os.path.join(PROJ_DIR, 'cache/xlm-roberta-base')
-    #model_name_or_path = "jinaai/jina-embeddings-v3"
     model_name_or_path = os.path.join(PROJ_DIR, 'cache/bge-m3')
 
     tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
-    # embed_model = AutoModel.from_pretrained("jinaai/jina-embeddings-v3", trust_remote_code=True)
-    #embed_model = AutoModel.from_pretrained(model_name_or_path)
-    #embed_hidden_size = embed_model.config.hidden_size
+
     embed_hidden_size = 1024
 
     domain = "legal"
@@ -151,14 +136,5 @@ if __name__ == "__main__":
         filtered_raised_questions_path = os.path.join(target_dir, "raised_questions_new.jsonl")
         inspect_raised_questions(raised_questions_path, filtered_raised_questions_path)
 
-    #multiturn_reasoning_path = os.path.join(created_data_dir, "multiturn_reasoning_20250510_235414.jsonl")
-    #inspect_multiturn_reasoning(multiturn_reasoning_path)
-
-    #work_dir = os.path.join(PROJ_DIR, f"data/from_yifan/domains/{domain}/0")
-    #text_chunk_storage = load_text_chunks(storage_class["JsonKVStorage"], work_dir, embed_hidden_size=embed_hidden_size)
-    #graph = load_graph(storage_class["NetworkXStorage"], work_dir, embed_hidden_size=embed_hidden_size)
-    #loop = asyncio.get_event_loop()
-    #loop.run_until_complete(inspect_entity_distribution_across_chunks(graph, text_chunk_storage))
-    #inspect_entity_distribution_across_questions()
 
     print("Finish")
