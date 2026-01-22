@@ -511,18 +511,3 @@ class HypergraphStorage(BaseHypergraphStorage):
         """
         return self._hypergraph.nbr_v(v_id)
 
-    # async def embed_nodes(self, algorithm: str) -> tuple[np.ndarray, list[str]]:
-    #     if algorithm not in self._node_embed_algorithms:
-    #         raise ValueError(f"Node embedding algorithm {algorithm} not supported")
-    #     return await self._node_embed_algorithms[algorithm]()
-    #
-    # async def _node2vec_embed(self):
-    #     from graspologic import embed
-    #
-    #     embeddings, nodes = embed.node2vec_embed(
-    #         self._graph,
-    #         **self.global_config["node2vec_params"],
-    #     )
-    #
-    #     nodes_ids = [self._graph.nodes[node_id]["id"] for node_id in nodes]
-    #     return embeddings, nodes_ids
