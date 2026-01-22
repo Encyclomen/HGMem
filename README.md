@@ -48,6 +48,12 @@ conda activate HGMem
 ```
 
 ## Quick Start
+### Downloading Embedding Model
+```sh
+mkdir cache
+cd cache
+huggingface-cli download BAAI/bge-m3 --local-dir /path/to/save --local-dir-use-symlinks False
+```
 ### API Usage (GPT-4o)
 
 This simple example will illustrate how to use `HGMem` with any OpenAI API-based LLM.
