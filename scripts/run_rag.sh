@@ -1,5 +1,5 @@
 export OPENAI_API_KEY="your_openai_api_key_here"
-epxort OPENAI_BASE_URL="your_openai_base_url_here"
+export OPENAI_BASE_URL="your_openai_base_url_here"
 
 python build_graph.py --domains Long \
                       --source_texts narrative_qa \
