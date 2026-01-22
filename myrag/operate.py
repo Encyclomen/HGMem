@@ -115,7 +115,7 @@ async def _handle_single_relationship_extraction(
     target = clean_str(record_attributes[2].upper())
     relationship_description = clean_str(record_attributes[3])
     relationship_source_id = chunk_key if chunk_key is not None else ""
-    relationship_dict = {"src_id": source, "tgt_id": target, "description": relationship_description, "source_id": relationship_source_id}
+    relationship_dict = {"src_id": source, "tgt_id": target, "description": relationship_description, "source_id": relationship_source_id, "weight": 1.0, "keywords": ""}
     if len(record_attributes) >= 5:
         relationship_dict["keywords"] = clean_str(record_attributes[4])
     if len(record_attributes) >= 6:
