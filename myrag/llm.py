@@ -659,10 +659,8 @@ async def vllm_complete(
     model_name = kwargs["hashing_kv"].global_config["llm_model_name"]
     model_name = model_name.split("/")[-1]  # Use only the model name part
     # Get vLLM server configuration
-    # base_url = kwargs.pop("base_url", None)
-    # api_key = kwargs.pop("api_key", None)
-    base_url = "http://0.0.0.0:25368/v1"
-    api_key = "empty"
+    base_url = kwargs.pop("base_url", None)
+    api_key = kwargs.pop("api_key", None)
     result = await vllm_complete_if_cache(
         model_name,
         prompt,
