@@ -57,7 +57,7 @@ This simple example will illustrate how to use `HGMem` with any OpenAI API-based
 
 ```sh
 export OPENAI_API_KEY="your_openai_api_key_here"
-epxort OPENAI_BASE_URL="your_openai_base_url_here"
+export OPENAI_BASE_URL="your_openai_base_url_here"
 
 python build_graph.py --domains Long \
                       --source_texts narrative_qa \
@@ -68,7 +68,7 @@ python build_graph.py --domains Long \
 2. Run HGMem:
 ```sh
 export OPENAI_API_KEY="your_openai_api_key_here"
-epxort OPENAI_BASE_URL="your_openai_base_url_here"
+export OPENAI_BASE_URL="your_openai_base_url_here"
 
 python graph_run.py --domains Long \
                      --dataset narrative_qa \
