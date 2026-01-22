@@ -34,7 +34,7 @@ Additionally, HGMem utlizes working memory that dynamically constructs hypergrap
 ## Installation
 
 ```sh
-conda create -n hgmem python=3.10
+conda create -n hgmem python=3.11
 conda activate hgmem
 pip install -r requirements.txt
 ```
@@ -48,6 +48,36 @@ conda activate HGMem
 ```
 
 ## Quick Start
+### API Usage (GPT-4o)
+
+This simple example will illustrate how to use `HGMem` with any vLLM-compatible locally deployed LLM.
+
+
+1. Build Graph: 
+
+```sh
+export OPENAI_API_KEY="your_openai_api_key_here"
+epxort OPENAI_BASE_URL="your_openai_base_url_here"
+
+python build_graph.py --domains Long \
+                      --source_texts narrative_qa \
+                      --llm_model_name gpt-4o
+                  
+```
+
+2. Run HGMem:
+```sh
+export OPENAI_API_KEY="your_openai_api_key_here"
+epxort OPENAI_BASE_URL="your_openai_base_url_here"
+
+python graph_run.py --domains Long \
+                     --dataset narrative_qa \
+                     --graph_mode single \
+                     --rag_mode HGMem \
+                     --source_type chunks100 \
+                     --question_type traditional \
+                     --llm_model_name gpt-4o
+```
 
 ### Local Deployment (vLLM)
 
@@ -65,28 +95,29 @@ conda activate HGMem  # vllm should be in this environment
 vllm serve Qwen2.5-32B --tensor-parallel-size 2 --max_model_len 4096 --gpu-memory-utilization 0.95 
 ```
 
-2. Build Graph: 
+2. Build Graph(adjust the llm_model_function in `build_graph.py` to use local vLLM): 
 
 ```sh
-python build_graph.py --domains English \
-                      --source_texts prelude 
+python build_graph.py --domains Long \
+                      --source_texts narrative_qa \
+                      --llm_model_name Qwen2.5-32b
 ```
 
-3. Run HGMem:
+3. Run HGMem(adjust the llm_model_function in `graph_run.py` to use local vLLM):
 ```sh
-python graph_run.py --domains English \
-                     --dataset prelude\
+python graph_run.py --domains Long \
+                     --dataset narrative_qa \
                      --graph_mode single \
-                     --rag_mode hgmem \
+                     --rag_mode HGMem \
                      --source_type chunks100 \
-                     --question_type sampled_difficult \
+                     --question_type traditional \
                      --llm_model_name Qwen2.5-32b 
 ```
 
 
 ### Custom Datasets
 
-To setup your own custom dataset for evaluation, follow the format and naming convention shown in `data/prelude_example/domains/English/0`. Organize your query corpus according to the query file `data/created_data/prelude_example/English/0`, be sure to also follow our naming convention.
+To setup your own custom dataset for evaluation, follow the format and naming convention shown in `data/narrative_qa/domains/Long/0`. Organize your query corpus according to the query file `data/created_data/narrative_qa/domains/Long/0`, be sure to also follow our naming convention.
 
 The corpus and optional query files should have the following format:
 
