@@ -33,7 +33,6 @@ from .base import (
     QueryParam,
 )
 from .prompt import GRAPH_FIELD_SEP, PROMPTS
-from .prompt_compare import PROMPTS_COMPARE
 
 
 def chunking_by_token_size(
@@ -1368,7 +1367,7 @@ async def hgmem_query(
     hashing_kv: BaseKVStorage = None,
 ):
     # Set mode
-    if query_param.mode != "hgmem":
+    if query_param.mode != "HGMem":
         logger.error(f"Incorrect mode {query_param.mode} in hgmem_query.")
         return PROMPTS["fail_response"]
 
