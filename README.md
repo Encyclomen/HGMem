@@ -50,7 +50,7 @@ conda activate HGMem
 ## Quick Start
 ### API Usage (GPT-4o)
 
-This simple example will illustrate how to use `HGMem` with any vLLM-compatible locally deployed LLM.
+This simple example will illustrate how to use `HGMem` with any OpenAI API-based LLM.
 
 
 1. Build Graph: 
